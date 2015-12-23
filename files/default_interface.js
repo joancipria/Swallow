@@ -1,6 +1,156 @@
+/*  This file is part of Swallow.
 
-/** FUNCTION SECTION **********************************************************/
+    Swallow is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
 
+    Swallow is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Swallow.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+
+/**
+ *	ShortCut System (Using shortcut.js library)
+ */
+
+// CTRL + S (SAVE MAP)
+shortcut.add("Ctrl+S",function() {
+ guardar ();
+ salvar(textarea.value);
+});
+
+// CTRL + O (OPEN IMAGE)
+shortcut.add("Ctrl+O",function() {
+document.getElementById('open_image').style.zIndex='99999';
+document.getElementsByTagName('input')[1].click();
+});
+
+// CTRL + L (LOAD MAP)
+shortcut.add("Ctrl+L",function() {
+document.getElementById('load_map').style.zIndex='99999';document.getElementsByTagName('input')[3].click();
+});
+
+// CTRL + Z (UNDO)
+shortcut.add("Ctrl+Z",function() {
+undo();
+});
+
+// CTRL + Y (REDO)
+shortcut.add("Ctrl+Y",function() {
+redo();
+});
+
+
+
+
+/**
+ *	Drag Windows System
+ */
+ 
+// About
+var theHandle5 = document.getElementById("about_handle");
+var theRoot5 = document.getElementById("about");
+Drag.init(theHandle5, theRoot5);
+
+// Open Image
+var theHandle4 = document.getElementById("open_image_handle");
+var theRoot4 = document.getElementById("open_image");
+Drag.init(theHandle4, theRoot4);
+
+// Help - Status container
+var theHandle3 = document.getElementById("help_handle");
+var theRoot3 = document.getElementById("help");
+Drag.init(theHandle3, theRoot3);
+
+// Load Map
+var theHandle2 = document.getElementById("load_map_handle");
+var theRoot2 = document.getElementById("load_map");
+Drag.init(theHandle2, theRoot2);
+
+// File properties
+var theHandle = document.getElementById("properties_handle");
+var theRoot = document.getElementById("properties");
+Drag.init(theHandle, theRoot);
+
+// View Options
+var theHandle = document.getElementById("view_options_handle");
+var theRoot = document.getElementById("view_options");
+Drag.init(theHandle, theRoot);
+
+/**
+ *	Clean the image preview (loading local images)
+ */
+
+function eliminar() {
+ document.getElementById('list').innerHTML='';
+}
+
+
+/**
+ *	FullScreen
+ */
+ 
+// Find the right method, call on correct element
+function launchFullscreen(element) {
+  if(element.requestFullscreen) {
+    element.requestFullscreen();
+  } else if(element.mozRequestFullScreen) {
+    element.mozRequestFullScreen();
+  } else if(element.webkitRequestFullscreen) {
+    element.webkitRequestFullscreen();
+  } else if(element.msRequestFullscreen) {
+    element.msRequestFullscreen();
+  }
+}
+
+function exitFullscreen() {
+  if(document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if(document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if(document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  }
+}
+
+function dumpFullscreen() {
+  console.log("document.fullscreenElement is: ", document.fullscreenElement || document.mozFullScreenElement || document.webkitFullscreenElement || document.msFullscreenElement);
+  console.log("document.fullscreenEnabled is: ", document.fullscreenEnabled || document.mozFullScreenEnabled || document.webkitFullscreenEnabled || document.msFullscreenEnabled);
+}
+
+// Events
+document.addEventListener("fullscreenchange", function(e) {
+  console.log("fullscreenchange event! ", e);
+});
+document.addEventListener("mozfullscreenchange", function(e) {
+  console.log("mozfullscreenchange event! ", e);
+});
+document.addEventListener("webkitfullscreenchange", function(e) {
+  console.log("webkitfullscreenchange event! ", e);
+});
+document.addEventListener("msfullscreenchange", function(e) {
+  console.log("msfullscreenchange event! ", e);
+});
+
+
+
+
+/**
+ *	Show Coords in taskbar
+ */
+function coordenadas(even) {
+
+var evento = window.event || even;
+var x = evento.clientX;
+var y = evento.clientY;
+document.getElementById('coordenadas').innerHTML = "<b>"+"x: "+x+", y: "+y+"</b>";
+
+}
 
 /**
  *	Handles mouseover on props row.
@@ -215,7 +365,62 @@ function gui_input_change(e) {
 /**
  *	Called from imgmap when a new area is added.
  */
+
 function gui_addArea(id) {
+	var contador = document.getElementById("contador").value;
+	contador--;
+   document.getElementById("contador").value = contador;
+		
+	if (contador == 0) {
+	document.getElementById("mem0").value = document.getElementById("html_container").value;
+	contador = 12;
+	}
+	
+	if (contador == 1) {
+	document.getElementById("mem1").value = document.getElementById("html_container").value;
+	}
+	
+	if (contador == 2) {
+	document.getElementById("mem2").value = document.getElementById("html_container").value;
+	}
+	
+	if (contador == 3) {
+	document.getElementById("mem3").value = document.getElementById("html_container").value;
+	}
+	
+	if (contador == 4) {
+	document.getElementById("mem4").value = document.getElementById("html_container").value;
+	}
+	
+	if (contador == 5) {
+	document.getElementById("mem5").value = document.getElementById("html_container").value;
+	}
+	
+	if (contador == 6) {
+	document.getElementById("mem6").value = document.getElementById("html_container").value;
+	}
+	
+	if (contador == 7) {
+	document.getElementById("mem7").value = document.getElementById("html_container").value;
+	}
+	
+	if (contador == 8) {
+	document.getElementById("mem8").value = document.getElementById("html_container").value;
+	}
+	
+	if (contador == 9) {
+	document.getElementById("mem9").value = document.getElementById("html_container").value;
+	}	
+	
+	if (contador == 10) {
+	document.getElementById("mem10").value = document.getElementById("html_container").value;
+	}
+	
+	if (contador == 11) {
+	document.getElementById("mem11").value = document.getElementById("html_container").value;
+	}
+	
+	
 	//var id = props.length;
 	//id = 1;
 	props[id] = document.createElement('DIV');
