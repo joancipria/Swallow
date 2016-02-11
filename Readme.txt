@@ -12,7 +12,7 @@ over a image. Then, you can use it in the web.
 
 Licensed uder GPL.
 
-http://joancipria.com/proyectos/swallow/
+http://swallow-editor.org/
 
 --- ES ---
 Swallow es un editor de mapas HTML libre construido en tecnologías web Javascript, CSS y HTML 
@@ -21,4 +21,4 @@ sobre una imagen un mapa HTML para su posterior uso en la web.
 
 Licenciado bajo GPL.
 
-http://joancipria.com/proyectos/swallow/
+http://swallow-editor.org/
