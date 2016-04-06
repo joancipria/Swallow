@@ -16,9 +16,9 @@ over a image. Then, you can use it in the web.
 With Swallow you can easily draw ALL the standard image map shapes (rectangle, circle, polygon), 
 and you can have full control over the generated HTML code as well.
 
-Main features:
+**Main features:**
 
-   -Built in Html, Javascript and CSS
+>  -Built in Html, Javascript and CSS
    -Very fast and light
    -Comfortable and intuitive interface
    -Load seamlessly high resolution images
@@ -39,9 +39,9 @@ Swallow es un editor de mapas HTML libre construido en tecnologÃ­as web Javasc
 y su uso esta enfocado a ser una herramienta de desarrollo web permitiendo dibujar fÃ¡cilmente 
 sobre una imagen un mapa HTML para su posterior uso en la web.
 
-Características principales:
+**Características principales:**
 
-   -Construido en Html, Javascript y CSS
+>  -Construido en Html, Javascript y CSS
    -Rápido y ligero
    -Interfaz cómoda e intuitiva
    -Carga sin problemas imágenes de gran resolución
