@@ -19,29 +19,7 @@ and you can have full control over the generated HTML code as well.
    * High flexibility: independent maps of the images
    * Various tools to create maps: circle, rectangle, polygon …
    * Create/edit links, tags, etc. directly from the graphic interface
-   * Code in real time
    
   ![Screenshot of Swallow](http://swallow-editor.org/en/img/cap2.png)
 
 Licensed udner GPL - http://swallow-editor.org/
-
-####--- ES ---
-Swallow es un editor de mapas HTML libre construido en tecnologÃ­as web Javascript, CSS y HTML 
-y su uso esta enfocado a ser una herramienta de desarrollo web permitiendo dibujar fÃ¡cilmente 
-sobre una imagen un mapa HTML para su posterior uso en la web.
-
-**Características principales:**
-
-   * Construido en Html, Javascript y CSS
-   * Rápido y ligero
-   * Interfaz cómoda e intuitiva
-   * Carga sin problemas imágenes de gran resolución
-   * Guardada/carga tus proyectos para trabajar en ellos más tarde
-   * Alta flexibilidad: mapas independientes de las imágenes
-   * Diferentes herramientas para crear mapas: círculo, rectángulo, polígono …
-   * Crea/edita links, etiquetas, etc directamente desde la interfaz
-   * Código visible en tiempo real
-
-![Screenshot of Swallow](http://swallow-editor.org/en/img/cap2.png)
-
-Licenciado bajo GPL - http://swallow-editor.org/
