@@ -19,6 +19,8 @@ and you can have full control over the generated HTML code as well.
    * High flexibility: independent maps of the images
    * Various tools to create maps: circle, rectangle, polygon …
    * Create/edit links, tags, etc. directly from the graphic interface
+   * Code in real time
+ 
    
   ![Screenshot of Swallow](http://swallow-editor.org/en/img/cap2.png)
 
