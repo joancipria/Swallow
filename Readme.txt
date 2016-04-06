@@ -8,8 +8,6 @@
 Try the online editor at: http://swallow-editor.org/
  
 
-
-
  --- EN ---
 Swallow is an utility to create and modify HTML image maps. It is builtin web languages such as 
 Javascript, CSS and HTML. And it is focused to offer a web developing tool to draw easily a map 
@@ -18,7 +16,7 @@ over a image. Then, you can use it in the web.
 With Swallow you can easily draw ALL the standard image map shapes (rectangle, circle, polygon), 
 and you can have full control over the generated HTML code as well.
 
-Main features:
+<b>Main features:</b>
 
    -Built in Html, Javascript and CSS
    -Very fast and light
@@ -26,31 +24,32 @@ Main features:
    -Load seamlessly high resolution images
    -Saved/load your projects to work on them later
    -High flexibility: independent maps of the images
-   -Various tools to create maps: circle, rectangle, polygon Ö
+   -Various tools to create maps: circle, rectangle, polygon ‚Ä¶
    -Create/edit links, tags, etc. directly from the graphic interface
    -Code in real time
-
+   
+   ![screenshot of the online editor](http://swallow-editor.org/en/img/cap2.png)
 
 Licensed udner GPL.
 
 http://swallow-editor.org/
 
 --- ES ---
-Swallow es un editor de mapas HTML libre construido en tecnolog√≠as web Javascript, CSS y HTML 
-y su uso esta enfocado a ser una herramienta de desarrollo web permitiendo dibujar f√°cilmente 
+Swallow es un editor de mapas HTML libre construido en tecnolog√É¬≠as web Javascript, CSS y HTML 
+y su uso esta enfocado a ser una herramienta de desarrollo web permitiendo dibujar f√É¬°cilmente 
 sobre una imagen un mapa HTML para su posterior uso en la web.
 
-CaracterÌsticas principales:
+Caracter√≠sticas principales:
 
    -Construido en Html, Javascript y CSS
-   -R·pido y ligero
-   -Interfaz cÛmoda e intuitiva
-   -Carga sin problemas im·genes de gran resoluciÛn
-   -Guardada/carga tus proyectos para trabajar en ellos m·s tarde
-   -Alta flexibilidad: mapas independientes de las im·genes
-   -Diferentes herramientas para crear mapas: cÌrculo, rect·ngulo, polÌgono Ö
+   -R√°pido y ligero
+   -Interfaz c√≥moda e intuitiva
+   -Carga sin problemas im√°genes de gran resoluci√≥n
+   -Guardada/carga tus proyectos para trabajar en ellos m√°s tarde
+   -Alta flexibilidad: mapas independientes de las im√°genes
+   -Diferentes herramientas para crear mapas: c√≠rculo, rect√°ngulo, pol√≠gono ‚Ä¶
    -Crea/edita links, etiquetas, etc directamente desde la interfaz
-   -CÛdigo visible en tiempo real
+   -C√≥digo visible en tiempo real
 
 
 Licenciado bajo GPL.
