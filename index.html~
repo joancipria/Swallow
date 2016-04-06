@@ -1,0 +1,433 @@
+<!--
+ 
+ Swallow is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Swallow is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+    
+    
+    Created by Joan Ciprià Moreno Teodoro - joancipria.com
+  	    
+    -->
+
+<html lang="en">
+	
+	<head> <title>Swallow</title>
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Language" content="en">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<script src="./files/ca-pub-2848237136814521.js" type="text/javascript" async=""></script>
+		<script src="./files/jquery2.js"></script>
+		<script src="./files/bootstrap.js"></script>
+		<script src="./languages/lang_es.js"></script>
+		<script type="text/javascript" src="./files/dom-drag.js"></script>
+		<script type="text/javascript" src="./files/load_saved_sys.js"></script>
+		<script type="text/javascript" src="./files/base64.js"></script>
+		<script type="text/javascript" src="./files/shortcut.js" ></script>
+
+		<link rel="stylesheet" href="./files/imgmap.css" type="text/css">
+		<link href="./files/bootstrap.css" rel="stylesheet">
+		<link href="./files/main.css" rel="stylesheet">
+		<link href="./files/icon.png" rel="icon" type="image/x-icon">
+
+	</head>
+	
+	<body onload="javascript:gui_loadImage(document.getElementById('source_url2').value)"  ondragstart='return false' scroll=”no”>
+
+<!--
+		<div style="position: absolute; left: 257px; top:8px;">
+			<a onclick="document.getElementById('previsualcon').style.zIndex='-99';document.getElementById('previsualsin').style.zIndex='99';myimgmap.togglePreview();"  href="#" >		<img id="previsualcon" style="position: absolute;left: 420px; z-index: -99" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB8AAAAhCAYAAAAh3nDkAAAABmJLR0QA/wD/AP+gvaeTAAAACXBI WXMAAAsSAAALEgHS3X78AAAAB3RJTUUH3wETCw8g4NMGfQAAAJZJREFUWMPt17ENwyAQBdAPomUH 5Nqb0LMgDQtQsAdyEzmyFHkFCjjpUqVPEyhyf4Gn0zX/q6NWfl4XWmsYY+DX0VrDWovNOZjHecIY gxCCwqTknPl130CMkbEgKSXWzEts9N6xDGfmf8axMPJzwQUXXHDBBZcyIWVCcMG/wlUphYkI3vup K5WIoD77vNY67ep937E5hzeR2M3v0eskOQAAAABJRU5ErkJggg=="></a>
+			<a href="#"onclick="document.getElementById('previsualsin').style.zIndex='98';document.getElementById('previsualcon').style.zIndex='99';myimgmap.togglePreview();" >	<img id="previsualsin" style="position: absolute;left: 425px; top: 7px; z-index: 99" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAACXBIWXMAAAsSAAALEgHS3X78AAAA B3RJTUUH3gkDDzsJtXcKwQAAAY5JREFUOMvt1D9IVlEYBvBfX6FBkFNfmunnkIJQtLVE0uhWNoe0 NEQ0FAkNQtDkWoMRKQ65BO5NQS01VEs01Zh/SixIPqfI2/J8cDTN2hx84XDvfc7zPue8/y673fb/ Za+GARzDcrBB1PEd1f8edhBv8QLtOXwOH9HxLwI1dOf9EM7hE37hC5bwE/M4Hw4c3S7SywnlJt5g HU08xyQe4mWw9XCuYgE3thIcxLfk5itu4wQu4B5uFTcaC6fCKs5uJXg3hDk0EtI0LuFOxEvrDbeK 7wa7ko1ZtAW7hpGEVmGo4Hfl2RafKhrgOBbxLi3RsseYCLnCewzjNO4XvHp8F9BdSyid+FD0GxzA 4eL7FJ7h+iZ8Ob5d6G8190xuMVoQx3ERK8UtV4KNF7zR7M2U7VPHK6wVog08SB6fZo0EaxRia/Gt by5MH17ntMlUsSd5fJI1Eaw3nCo+fdtNyxFMZSKaeJRCDGUNB2uGMxWfHX8YZ9IOq0X+qqKRZ8P5 Y+T27SDegZMJEz6noj/sWct+A6h2Zyu+DhJeAAAAAElFTkSuQmCC" alt="Previsualizar" title="Previsualizar" style="margin: 0 2px; cursor: pointer;"></a>
+		</div>
+ -->
+		<div id="taskbar">
+
+	
+			<div  id="btn-1" class="btn-group">
+    			<button style="font-size: 85%;" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Archivo <span class="caret"></span></button>
+    			
+    			<ul  style="font-size: 85%;" class="dropdown-menu" role="menu">
+      			<li><a href="#" onclick="document.getElementById('open_image').style.zIndex='99999';document.getElementsByTagName('input')[1].click();">Abrir imágen<p class="shortcuts">Ctrl+O</p></a></li>
+	      		<li><a href="#" onclick="document.getElementById('load_map').style.zIndex='99999';document.getElementsByTagName('input')[3].click();">Cargar mapa<p class="shortcuts">Ctrl+L</p></a></li>
+   	  		 	<li><a href="#" onclick="saveTextAsFile()">Guardar mapa<p class="shortcuts">Ctrl+S</p></a></li>
+    				<li class="divider"></li>
+      			<li><a href="#" onclick="document.getElementById('properties').style.zIndex='99999';">Propiedades</a></li>
+    			</ul>
+  			</div>
+
+
+			<div id="btn-2" class="btn-group">
+    			<button style="font-size: 85%;" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ver <span class="caret"></span></button>
+    			
+    			<ul style="font-size: 85%;" class="dropdown-menu" role="menu">
+	      		<li><a onclick="document.getElementById('fieldset_html').style.zIndex='-18';document.getElementById('cuadroblanco').style.zIndex='-17';document.getElementById('area2').style.zIndex='20'" href="#">Imágen   <img src="./files/image.png" alt=""></a></li>
+   	   		<li><a onclick="document.getElementById('status_container').style.zIndex='-99';document.getElementById('area2').style.zIndex='8';document.getElementById('cuadroblanco').style.zIndex='9';document.getElementById('fieldset_html').style.zIndex='10';document.getElementById('pic_container').style.zIndex='6'" href="#">Código   <img src="./files/code.png" alt=""></a></li>
+					<li class="divider"></li>
+					<li><a onclick="document.getElementById('view_options').style.zIndex='99999';" href="#">Opciones</a></li>    
+    			</ul>
+  			</div>
+
+
+			<div id="btn-3" class="btn-group">
+    			<button style="font-size: 85%;" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">Ayuda <span class="caret"></span></button>
+    		
+    			<ul style="font-size: 85%;" class="dropdown-menu" role="menu">
+      			<li><a onclick="document.getElementById('help').style.zIndex='99999';" href="#">Activar Ayuda</a></li>
+      			<li><a href="http://swallow-editor.org" target="_blank">Sitio web de Swallow</a></li>
+      			<li class="divider"></li>
+      			<li><a onclick="document.getElementById('about').style.zIndex='99999';" href="#">Acerca de Swallow</a></li>
+    			</ul>
+ 			</div> 
+  
+			<div id="coordenadas"></div>
+	
+			<div id="button_container">
+				<img src="./files/separador.png">
+				<img src="./files/add.png" onclick="myimgmap.addNewArea()" alt="Añadir área" title="Añadir área" style="margin: 0 2px; cursor: pointer;">&nbsp
+				<img src="./files/delete.png" onclick="myimgmap.removeArea(myimgmap.currentid)" alt="Eliminar área" title="Eliminar área" style="margin: 0 2px; cursor: pointer;">
+				<img src="./files/separador.png">
+
+				<img title="Zoom" src="./files/zoom.png"><label for="dd_zoom"></label>
+				
+				<select onchange="gui_zoom(this)" id="dd_zoom">
+					<option value="0.25">25%</option>
+					<option value="0.5">50%</option>
+					<option value="0.75">75%</option>
+					<option value="1" selected="selected">100%</option>
+					<option value="1.5">150%</option>			
+					<option value="2">200%</option>
+					<option value="2.5">250%</option>
+					<option value="3">300%</option>
+				</select>
+				
+				<img src="./files/separador.png">
+				<img onclick="undo();" src="./files/undo.png" title="Deshacer (Ctrl + Z)" alt="Deshacer">&nbsp;
+				<img onclick="redo();"src="./files/redo.png" title="Rehacer (Ctrl + Y)" alt="Rehacer">
+				<img src="./files/separador.png">
+				<img src="./files/draw_square.png" onclick="changeToSquare();" width="24px" height="24px" alt="">&nbsp
+				<img src="./files/draw_polygon.png" onclick="changeToPoly();" width="24px" height="24px" alt="">								
+			</div>
+
+
+		</div>
+
+
+
+		<div id="cuadroblanco"></div> <!--WHITE SHAPE--> 
+
+<div style="position: absolute; z-index: -999999999999;" class="source_desc">Ruta de la Imágen</div>
+<div style="position: absolute; z-index: -999999999999;" class="source_url"><input id="source_url2" value="" type="txt"></div>
+
+
+
+
+
+
+<!--	WINDOWS	-->
+
+
+		<!--	HELP WINDOW	-->
+	
+		<div id="help" style="z-index: -999; position: absolute; width: 170px; height: 95px; top: 55px; left: 990px;border-right: 2px solid black;border-bottom: 2px solid black; border-left: 2px solid black;background-color: #d1d1d1; padding-bottom: 10px;">
+			<table bgcolor="#000000" width="100%">
+			<tr id="help_handle">
+			<td align="center" valign="middle" bgcolor="black" width="10%">
+			<font size="2px" color="white">Ayuda</font><a onclick="document.getElementById('help').style.zIndex='-999';" href="#" >
+			<table style="position:absolute;top: 2.6px;left:150px;" align="right" cellpadding=0 cellspacing=0 height=13 width=13 style="font-size:0px;height:13;width:13;"><tr><td><table cellpadding=0 cellspacing=0 height=13 width=13 style="font-size:0px;height:13px;width:13px;"><tr height=0><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /></tr><tr height=1><td bgcolor="#040000" /><td bgcolor="#450000" /><td bgcolor="#710000" /><td bgcolor="#780000" /><td bgcolor="#7f0000" /><td bgcolor="#850000" /><td bgcolor="#8a0000" /><td bgcolor="#830000" /><td bgcolor="#7a0000" /><td bgcolor="#720000" /><td bgcolor="#6b0000" /><td bgcolor="#430000" /><td bgcolor="#050000" /></tr><tr height=1><td bgcolor="#440000" /><td bgcolor="#e40000" /><td bgcolor="#f30000" /><td bgcolor="#f00000" /><td bgcolor="#eb0000" /><td bgcolor="#e80000" /><td bgcolor="#e30000" /><td bgcolor="#dd0000" /><td bgcolor="#d70000" /><td bgcolor="#d10000" /><td bgcolor="#cb0000" /><td bgcolor="#be0000" /><td bgcolor="#3d0000" /></tr><tr height=1><td bgcolor="#730000" /><td bgcolor="#f50000" /><td bgcolor="#f90000" /><td bgcolor="#f80000" /><td bgcolor="#f60000" /><td bgcolor="#f40000" /><td bgcolor="#f20000" /><td bgcolor="#f10000" /><td bgcolor="#ef0000" /><td bgcolor="#ed0000" /><td bgcolor="#e60000" /><td bgcolor="#c10000" /><td bgcolor="#590000" /></tr><tr height=1><td bgcolor="#710000" /><td bgcolor="#f20000" /><td bgcolor="#f70101" /><td bgcolor="#fa3838" /><td bgcolor="#fa3737" /><td bgcolor="#f80000" /><td bgcolor="#f90101" /><td bgcolor="#f80000" /><td bgcolor="#fa3737" /><td bgcolor="#fb3838" /><td bgcolor="#fa0101" /><td bgcolor="#cd0000" /><td bgcolor="#530000" /></tr><tr height=1><td bgcolor="#6e0000" /><td bgcolor="#ec0000" /><td bgcolor="#f00303" /><td bgcolor="#f99b9b" /><td bgcolor="#fff9f9" /><td bgcolor="#f44949" /><td bgcolor="#ee0000" /><td bgcolor="#f44949" /><td bgcolor="#fff9f9" /><td bgcolor="#f99b9b" /><td bgcolor="#f10303" /><td bgcolor="#c70000" /><td bgcolor="#500000" /></tr><tr height=1><td bgcolor="#6c0000" /><td bgcolor="#e60000" /><td bgcolor="#e90000" /><td bgcolor="#eb1e1e" /><td bgcolor="#fad9d9" /><td bgcolor="#fef7f7" /><td bgcolor="#f47e7e" /><td bgcolor="#fef7f7" /><td bgcolor="#fad9d9" /><td bgcolor="#eb1e1e" /><td bgcolor="#ea0000" /><td bgcolor="#c10000" /><td bgcolor="#4f0000" /></tr><tr height=1><td bgcolor="#6a0000" /><td bgcolor="#e10000" /><td colspan=2 bgcolor="#e20000" /><td bgcolor="#e11717" /><td bgcolor="#f9dede" /><td bgcolor="#ffffff" /><td bgcolor="#f9dede" /><td bgcolor="#e11717" /><td bgcolor="#e20000" /><td bgcolor="#e30000" /><td bgcolor="#bc0000" /><td bgcolor="#4c0000" /></tr><tr height=1><td bgcolor="#670000" /><td bgcolor="#db0000" /><td bgcolor="#dc0000" /><td bgcolor="#da0000" /><td bgcolor="#e64848" /><td bgcolor="#fff8f8" /><td bgcolor="#feffff" /><td bgcolor="#fff8f8" /><td bgcolor="#e64848" /><td bgcolor="#db0000" /><td bgcolor="#dc0000" /><td bgcolor="#b60000" /><td bgcolor="#4a0000" /></tr><tr height=1><td bgcolor="#650000" /><td colspan=2 bgcolor="#d50000" /><td bgcolor="#e04343" /><td bgcolor="#fef9f9" /><td bgcolor="#f4d7d7" /><td bgcolor="#d84242" /><td bgcolor="#f4d7d7" /><td bgcolor="#fef9f9" /><td bgcolor="#e04343" /><td bgcolor="#d60000" /><td bgcolor="#b00000" /><td bgcolor="#470000" /></tr><tr height=1><td bgcolor="#620000" /><td bgcolor="#cf0000" /><td bgcolor="#cf0606" /><td bgcolor="#ecaeae" /><td bgcolor="#eecdcd" /><td bgcolor="#ce1b1b" /><td bgcolor="#cc0000" /><td bgcolor="#ce1b1b" /><td bgcolor="#eecdcd" /><td bgcolor="#ecaeae" /><td bgcolor="#cf0606" /><td bgcolor="#ab0000" /><td bgcolor="#450000" /></tr><tr height=1><td bgcolor="#610000" /><td bgcolor="#ca0000" /><td bgcolor="#c70000" /><td bgcolor="#c41111" /><td bgcolor="#c50e0e" /><td colspan=3 bgcolor="#c80000" /><td bgcolor="#c50e0e" /><td bgcolor="#c41111" /><td bgcolor="#c80000" /><td bgcolor="#a50000" /><td bgcolor="#430000" /></tr><tr height=1><td bgcolor="#470000" /><td bgcolor="#c00000" /><td bgcolor="#c20000" /><td bgcolor="#c10000" /><td bgcolor="#be0000" /><td bgcolor="#bb0000" /><td bgcolor="#b90000" /><td bgcolor="#b70000" /><td bgcolor="#b40000" /><td bgcolor="#b30000" /><td bgcolor="#ac0000" /><td bgcolor="#8e0000" /><td bgcolor="#320000" /></tr><tr height=1><td bgcolor="#070000" /><td bgcolor="#4c0000" /><td bgcolor="#6c0000" /><td bgcolor="#680000" /><td bgcolor="#640000" /><td bgcolor="#610000" /><td bgcolor="#5e0000" /><td bgcolor="#5a0000" /><td bgcolor="#580000" /><td bgcolor="#540000" /><td bgcolor="#510000" /><td bgcolor="#380000" /><td bgcolor="#050000" /></tr></table></td></tr></table>
+			</a></td> </tr>
+			<tr><td>
+			<div id="status_container"></div>
+			</td></tr>
+			</table>
+		</div>
+
+	
+		<!--	OPEN IMAGE WINDOW	-->
+	
+	<div id="open_image" style="z-index: -999; position: absolute; width: 360px; height: 250px; top: 200px; left: 200px;border-right: 2px solid black;border-bottom: 2px solid black; border-left: 2px solid black;background-color: #d1d1d1; padding-bottom: 10px;">
+			<table bgcolor="#444749" width="100%">
+			<tr id="open_image_handle">
+			<td align="center" valign="middle" bgcolor="black" width="10%"> 
+			<font size="2px" color="white">Abrir imágen</font><a onclick="document.getElementById('open_image').style.zIndex='-999';" href="#" >
+			<table style="position:absolute;top: 2.6px;left:340px;" align="right" cellpadding=0 cellspacing=0 height=13 width=13 style="font-size:0px;height:13;width:13;"><tr><td><table cellpadding=0 cellspacing=0 height=13 width=13 style="font-size:0px;height:13px;width:13px;"><tr height=0><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /></tr><tr height=1><td bgcolor="#040000" /><td bgcolor="#450000" /><td bgcolor="#710000" /><td bgcolor="#780000" /><td bgcolor="#7f0000" /><td bgcolor="#850000" /><td bgcolor="#8a0000" /><td bgcolor="#830000" /><td bgcolor="#7a0000" /><td bgcolor="#720000" /><td bgcolor="#6b0000" /><td bgcolor="#430000" /><td bgcolor="#050000" /></tr><tr height=1><td bgcolor="#440000" /><td bgcolor="#e40000" /><td bgcolor="#f30000" /><td bgcolor="#f00000" /><td bgcolor="#eb0000" /><td bgcolor="#e80000" /><td bgcolor="#e30000" /><td bgcolor="#dd0000" /><td bgcolor="#d70000" /><td bgcolor="#d10000" /><td bgcolor="#cb0000" /><td bgcolor="#be0000" /><td bgcolor="#3d0000" /></tr><tr height=1><td bgcolor="#730000" /><td bgcolor="#f50000" /><td bgcolor="#f90000" /><td bgcolor="#f80000" /><td bgcolor="#f60000" /><td bgcolor="#f40000" /><td bgcolor="#f20000" /><td bgcolor="#f10000" /><td bgcolor="#ef0000" /><td bgcolor="#ed0000" /><td bgcolor="#e60000" /><td bgcolor="#c10000" /><td bgcolor="#590000" /></tr><tr height=1><td bgcolor="#710000" /><td bgcolor="#f20000" /><td bgcolor="#f70101" /><td bgcolor="#fa3838" /><td bgcolor="#fa3737" /><td bgcolor="#f80000" /><td bgcolor="#f90101" /><td bgcolor="#f80000" /><td bgcolor="#fa3737" /><td bgcolor="#fb3838" /><td bgcolor="#fa0101" /><td bgcolor="#cd0000" /><td bgcolor="#530000" /></tr><tr height=1><td bgcolor="#6e0000" /><td bgcolor="#ec0000" /><td bgcolor="#f00303" /><td bgcolor="#f99b9b" /><td bgcolor="#fff9f9" /><td bgcolor="#f44949" /><td bgcolor="#ee0000" /><td bgcolor="#f44949" /><td bgcolor="#fff9f9" /><td bgcolor="#f99b9b" /><td bgcolor="#f10303" /><td bgcolor="#c70000" /><td bgcolor="#500000" /></tr><tr height=1><td bgcolor="#6c0000" /><td bgcolor="#e60000" /><td bgcolor="#e90000" /><td bgcolor="#eb1e1e" /><td bgcolor="#fad9d9" /><td bgcolor="#fef7f7" /><td bgcolor="#f47e7e" /><td bgcolor="#fef7f7" /><td bgcolor="#fad9d9" /><td bgcolor="#eb1e1e" /><td bgcolor="#ea0000" /><td bgcolor="#c10000" /><td bgcolor="#4f0000" /></tr><tr height=1><td bgcolor="#6a0000" /><td bgcolor="#e10000" /><td colspan=2 bgcolor="#e20000" /><td bgcolor="#e11717" /><td bgcolor="#f9dede" /><td bgcolor="#ffffff" /><td bgcolor="#f9dede" /><td bgcolor="#e11717" /><td bgcolor="#e20000" /><td bgcolor="#e30000" /><td bgcolor="#bc0000" /><td bgcolor="#4c0000" /></tr><tr height=1><td bgcolor="#670000" /><td bgcolor="#db0000" /><td bgcolor="#dc0000" /><td bgcolor="#da0000" /><td bgcolor="#e64848" /><td bgcolor="#fff8f8" /><td bgcolor="#feffff" /><td bgcolor="#fff8f8" /><td bgcolor="#e64848" /><td bgcolor="#db0000" /><td bgcolor="#dc0000" /><td bgcolor="#b60000" /><td bgcolor="#4a0000" /></tr><tr height=1><td bgcolor="#650000" /><td colspan=2 bgcolor="#d50000" /><td bgcolor="#e04343" /><td bgcolor="#fef9f9" /><td bgcolor="#f4d7d7" /><td bgcolor="#d84242" /><td bgcolor="#f4d7d7" /><td bgcolor="#fef9f9" /><td bgcolor="#e04343" /><td bgcolor="#d60000" /><td bgcolor="#b00000" /><td bgcolor="#470000" /></tr><tr height=1><td bgcolor="#620000" /><td bgcolor="#cf0000" /><td bgcolor="#cf0606" /><td bgcolor="#ecaeae" /><td bgcolor="#eecdcd" /><td bgcolor="#ce1b1b" /><td bgcolor="#cc0000" /><td bgcolor="#ce1b1b" /><td bgcolor="#eecdcd" /><td bgcolor="#ecaeae" /><td bgcolor="#cf0606" /><td bgcolor="#ab0000" /><td bgcolor="#450000" /></tr><tr height=1><td bgcolor="#610000" /><td bgcolor="#ca0000" /><td bgcolor="#c70000" /><td bgcolor="#c41111" /><td bgcolor="#c50e0e" /><td colspan=3 bgcolor="#c80000" /><td bgcolor="#c50e0e" /><td bgcolor="#c41111" /><td bgcolor="#c80000" /><td bgcolor="#a50000" /><td bgcolor="#430000" /></tr><tr height=1><td bgcolor="#470000" /><td bgcolor="#c00000" /><td bgcolor="#c20000" /><td bgcolor="#c10000" /><td bgcolor="#be0000" /><td bgcolor="#bb0000" /><td bgcolor="#b90000" /><td bgcolor="#b70000" /><td bgcolor="#b40000" /><td bgcolor="#b30000" /><td bgcolor="#ac0000" /><td bgcolor="#8e0000" /><td bgcolor="#320000" /></tr><tr height=1><td bgcolor="#070000" /><td bgcolor="#4c0000" /><td bgcolor="#6c0000" /><td bgcolor="#680000" /><td bgcolor="#640000" /><td bgcolor="#610000" /><td bgcolor="#5e0000" /><td bgcolor="#5a0000" /><td bgcolor="#580000" /><td bgcolor="#540000" /><td bgcolor="#510000" /><td bgcolor="#380000" /><td bgcolor="#050000" /></tr></table></td></tr></table>
+			</a></td> </tr>
+			<tr><td>
+			<div>
+			<center>
+			<output id="list"></output>
+			</center>
+			</div>
+			<div style="position: absolute; top: 200px; left: 0px;">
+			<input style="font-size: 75%;" onclick="eliminar()" type="file" id="files" name="file" />
+			</div>
+			<div style="position: absolute; top: 200px; left: 280px;">
+			<input style="font-size: 75%;" type="button" value="Abrir" onclick="document.getElementById('pic_container').getElementsByTagName('img')[0].src = (document.getElementById('seleccion').src);document.getElementById('status_container').style.zIndex='-999';document.getElementById('fieldset_html').style.zIndex='-18';document.getElementById('cuadroblanco').style.zIndex='-17';document.getElementById('area2').style.zIndex='20';document.getElementById('open_image').style.zIndex='-999';"  class="source_accept"/><br>
+			</div>
+			</td></tr>
+			</table><div class="source_desc"></div>
+
+		</div>
+
+		<!--	ABOUT WINDOW	-->
+		
+		<div id="about" style="z-index: -999; position: absolute; width: 360px; height: 260px; top: 200px; left: 200px;border-right: 2px solid black;border-bottom: 2px solid black; border-left: 2px solid black;background-color: #d1d1d1; padding-bottom: 10px;">
+			<table bgcolor="#444749" width="100%">
+			<tr id="about_handle">
+			<td align="center" valign="middle" bgcolor="black" width="10%">
+			<font size="2px" color="white">Acerca de Swallow</font><a onclick="document.getElementById('about').style.zIndex='-999';" href="#" >
+			<table style="position:absolute;top: 2.6px;left:340px;" align="right" cellpadding=0 cellspacing=0 height=13 width=13 style="font-size:0px;height:13;width:13;"><tr><td><table cellpadding=0 cellspacing=0 height=13 width=13 style="font-size:0px;height:13px;width:13px;"><tr height=0><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /></tr><tr height=1><td bgcolor="#040000" /><td bgcolor="#450000" /><td bgcolor="#710000" /><td bgcolor="#780000" /><td bgcolor="#7f0000" /><td bgcolor="#850000" /><td bgcolor="#8a0000" /><td bgcolor="#830000" /><td bgcolor="#7a0000" /><td bgcolor="#720000" /><td bgcolor="#6b0000" /><td bgcolor="#430000" /><td bgcolor="#050000" /></tr><tr height=1><td bgcolor="#440000" /><td bgcolor="#e40000" /><td bgcolor="#f30000" /><td bgcolor="#f00000" /><td bgcolor="#eb0000" /><td bgcolor="#e80000" /><td bgcolor="#e30000" /><td bgcolor="#dd0000" /><td bgcolor="#d70000" /><td bgcolor="#d10000" /><td bgcolor="#cb0000" /><td bgcolor="#be0000" /><td bgcolor="#3d0000" /></tr><tr height=1><td bgcolor="#730000" /><td bgcolor="#f50000" /><td bgcolor="#f90000" /><td bgcolor="#f80000" /><td bgcolor="#f60000" /><td bgcolor="#f40000" /><td bgcolor="#f20000" /><td bgcolor="#f10000" /><td bgcolor="#ef0000" /><td bgcolor="#ed0000" /><td bgcolor="#e60000" /><td bgcolor="#c10000" /><td bgcolor="#590000" /></tr><tr height=1><td bgcolor="#710000" /><td bgcolor="#f20000" /><td bgcolor="#f70101" /><td bgcolor="#fa3838" /><td bgcolor="#fa3737" /><td bgcolor="#f80000" /><td bgcolor="#f90101" /><td bgcolor="#f80000" /><td bgcolor="#fa3737" /><td bgcolor="#fb3838" /><td bgcolor="#fa0101" /><td bgcolor="#cd0000" /><td bgcolor="#530000" /></tr><tr height=1><td bgcolor="#6e0000" /><td bgcolor="#ec0000" /><td bgcolor="#f00303" /><td bgcolor="#f99b9b" /><td bgcolor="#fff9f9" /><td bgcolor="#f44949" /><td bgcolor="#ee0000" /><td bgcolor="#f44949" /><td bgcolor="#fff9f9" /><td bgcolor="#f99b9b" /><td bgcolor="#f10303" /><td bgcolor="#c70000" /><td bgcolor="#500000" /></tr><tr height=1><td bgcolor="#6c0000" /><td bgcolor="#e60000" /><td bgcolor="#e90000" /><td bgcolor="#eb1e1e" /><td bgcolor="#fad9d9" /><td bgcolor="#fef7f7" /><td bgcolor="#f47e7e" /><td bgcolor="#fef7f7" /><td bgcolor="#fad9d9" /><td bgcolor="#eb1e1e" /><td bgcolor="#ea0000" /><td bgcolor="#c10000" /><td bgcolor="#4f0000" /></tr><tr height=1><td bgcolor="#6a0000" /><td bgcolor="#e10000" /><td colspan=2 bgcolor="#e20000" /><td bgcolor="#e11717" /><td bgcolor="#f9dede" /><td bgcolor="#ffffff" /><td bgcolor="#f9dede" /><td bgcolor="#e11717" /><td bgcolor="#e20000" /><td bgcolor="#e30000" /><td bgcolor="#bc0000" /><td bgcolor="#4c0000" /></tr><tr height=1><td bgcolor="#670000" /><td bgcolor="#db0000" /><td bgcolor="#dc0000" /><td bgcolor="#da0000" /><td bgcolor="#e64848" /><td bgcolor="#fff8f8" /><td bgcolor="#feffff" /><td bgcolor="#fff8f8" /><td bgcolor="#e64848" /><td bgcolor="#db0000" /><td bgcolor="#dc0000" /><td bgcolor="#b60000" /><td bgcolor="#4a0000" /></tr><tr height=1><td bgcolor="#650000" /><td colspan=2 bgcolor="#d50000" /><td bgcolor="#e04343" /><td bgcolor="#fef9f9" /><td bgcolor="#f4d7d7" /><td bgcolor="#d84242" /><td bgcolor="#f4d7d7" /><td bgcolor="#fef9f9" /><td bgcolor="#e04343" /><td bgcolor="#d60000" /><td bgcolor="#b00000" /><td bgcolor="#470000" /></tr><tr height=1><td bgcolor="#620000" /><td bgcolor="#cf0000" /><td bgcolor="#cf0606" /><td bgcolor="#ecaeae" /><td bgcolor="#eecdcd" /><td bgcolor="#ce1b1b" /><td bgcolor="#cc0000" /><td bgcolor="#ce1b1b" /><td bgcolor="#eecdcd" /><td bgcolor="#ecaeae" /><td bgcolor="#cf0606" /><td bgcolor="#ab0000" /><td bgcolor="#450000" /></tr><tr height=1><td bgcolor="#610000" /><td bgcolor="#ca0000" /><td bgcolor="#c70000" /><td bgcolor="#c41111" /><td bgcolor="#c50e0e" /><td colspan=3 bgcolor="#c80000" /><td bgcolor="#c50e0e" /><td bgcolor="#c41111" /><td bgcolor="#c80000" /><td bgcolor="#a50000" /><td bgcolor="#430000" /></tr><tr height=1><td bgcolor="#470000" /><td bgcolor="#c00000" /><td bgcolor="#c20000" /><td bgcolor="#c10000" /><td bgcolor="#be0000" /><td bgcolor="#bb0000" /><td bgcolor="#b90000" /><td bgcolor="#b70000" /><td bgcolor="#b40000" /><td bgcolor="#b30000" /><td bgcolor="#ac0000" /><td bgcolor="#8e0000" /><td bgcolor="#320000" /></tr><tr height=1><td bgcolor="#070000" /><td bgcolor="#4c0000" /><td bgcolor="#6c0000" /><td bgcolor="#680000" /><td bgcolor="#640000" /><td bgcolor="#610000" /><td bgcolor="#5e0000" /><td bgcolor="#5a0000" /><td bgcolor="#580000" /><td bgcolor="#540000" /><td bgcolor="#510000" /><td bgcolor="#380000" /><td bgcolor="#050000" /></tr></table></td></tr></table>
+
+			</a></td> </tr>
+			<tr><td>
+			<div class="source_desc"></div>
+			<br>
+			<center><img id="logo_swallow" src="./files/swallow_logo.png" alt=""></center><br>
+			<p align="justify" style="font-size: 75%; padding:2px;font-family:Helvetica, Arial, sans-serif;">Swallow es un editor de mapas HTML libre construido en tecnologías web Javascript, CSS y HTML y su uso esta enfocado a ser una herramienta de desarrollo web permitiendo dibujar fácilmente sobre una imagen un mapa HTML para su posterior uso en la web.</p>
+			<p align="center" style="font-size: 80%;padding-left: 2px; padding-right: 2px;"><a href="./files/license.html" target="_blank">Licencia</a></p>
+			</td></tr>
+			</table>
+		</div>
+
+		<!--	LOAD MAP WINDOW	-->
+		
+		<div id="load_map" style="z-index: -999; position: absolute; width: 360px; height: 250px; top: 200px; left: 200px;border-right: 2px solid black;border-bottom: 2px solid black; border-left: 2px solid black;background-color: #d1d1d1; padding-bottom: 10px;">
+			<table bgcolor="#444749" width="100%">
+			<tr id="load_map_handle">
+			<td align="center" valign="middle" bgcolor="black" width="10%">
+			<font size="2px" color="white">Cargar mapa</font><a onclick="document.getElementById('load_map').style.zIndex='-999';" href="#" >
+			<table style="position:absolute;top: 2.6px;left:340px;" align="right" cellpadding=0 cellspacing=0 height=13 width=13 style="font-size:0px;height:13;width:13;"><tr><td><table cellpadding=0 cellspacing=0 height=13 width=13 style="font-size:0px;height:13px;width:13px;"><tr height=0><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /></tr><tr height=1><td bgcolor="#040000" /><td bgcolor="#450000" /><td bgcolor="#710000" /><td bgcolor="#780000" /><td bgcolor="#7f0000" /><td bgcolor="#850000" /><td bgcolor="#8a0000" /><td bgcolor="#830000" /><td bgcolor="#7a0000" /><td bgcolor="#720000" /><td bgcolor="#6b0000" /><td bgcolor="#430000" /><td bgcolor="#050000" /></tr><tr height=1><td bgcolor="#440000" /><td bgcolor="#e40000" /><td bgcolor="#f30000" /><td bgcolor="#f00000" /><td bgcolor="#eb0000" /><td bgcolor="#e80000" /><td bgcolor="#e30000" /><td bgcolor="#dd0000" /><td bgcolor="#d70000" /><td bgcolor="#d10000" /><td bgcolor="#cb0000" /><td bgcolor="#be0000" /><td bgcolor="#3d0000" /></tr><tr height=1><td bgcolor="#730000" /><td bgcolor="#f50000" /><td bgcolor="#f90000" /><td bgcolor="#f80000" /><td bgcolor="#f60000" /><td bgcolor="#f40000" /><td bgcolor="#f20000" /><td bgcolor="#f10000" /><td bgcolor="#ef0000" /><td bgcolor="#ed0000" /><td bgcolor="#e60000" /><td bgcolor="#c10000" /><td bgcolor="#590000" /></tr><tr height=1><td bgcolor="#710000" /><td bgcolor="#f20000" /><td bgcolor="#f70101" /><td bgcolor="#fa3838" /><td bgcolor="#fa3737" /><td bgcolor="#f80000" /><td bgcolor="#f90101" /><td bgcolor="#f80000" /><td bgcolor="#fa3737" /><td bgcolor="#fb3838" /><td bgcolor="#fa0101" /><td bgcolor="#cd0000" /><td bgcolor="#530000" /></tr><tr height=1><td bgcolor="#6e0000" /><td bgcolor="#ec0000" /><td bgcolor="#f00303" /><td bgcolor="#f99b9b" /><td bgcolor="#fff9f9" /><td bgcolor="#f44949" /><td bgcolor="#ee0000" /><td bgcolor="#f44949" /><td bgcolor="#fff9f9" /><td bgcolor="#f99b9b" /><td bgcolor="#f10303" /><td bgcolor="#c70000" /><td bgcolor="#500000" /></tr><tr height=1><td bgcolor="#6c0000" /><td bgcolor="#e60000" /><td bgcolor="#e90000" /><td bgcolor="#eb1e1e" /><td bgcolor="#fad9d9" /><td bgcolor="#fef7f7" /><td bgcolor="#f47e7e" /><td bgcolor="#fef7f7" /><td bgcolor="#fad9d9" /><td bgcolor="#eb1e1e" /><td bgcolor="#ea0000" /><td bgcolor="#c10000" /><td bgcolor="#4f0000" /></tr><tr height=1><td bgcolor="#6a0000" /><td bgcolor="#e10000" /><td colspan=2 bgcolor="#e20000" /><td bgcolor="#e11717" /><td bgcolor="#f9dede" /><td bgcolor="#ffffff" /><td bgcolor="#f9dede" /><td bgcolor="#e11717" /><td bgcolor="#e20000" /><td bgcolor="#e30000" /><td bgcolor="#bc0000" /><td bgcolor="#4c0000" /></tr><tr height=1><td bgcolor="#670000" /><td bgcolor="#db0000" /><td bgcolor="#dc0000" /><td bgcolor="#da0000" /><td bgcolor="#e64848" /><td bgcolor="#fff8f8" /><td bgcolor="#feffff" /><td bgcolor="#fff8f8" /><td bgcolor="#e64848" /><td bgcolor="#db0000" /><td bgcolor="#dc0000" /><td bgcolor="#b60000" /><td bgcolor="#4a0000" /></tr><tr height=1><td bgcolor="#650000" /><td colspan=2 bgcolor="#d50000" /><td bgcolor="#e04343" /><td bgcolor="#fef9f9" /><td bgcolor="#f4d7d7" /><td bgcolor="#d84242" /><td bgcolor="#f4d7d7" /><td bgcolor="#fef9f9" /><td bgcolor="#e04343" /><td bgcolor="#d60000" /><td bgcolor="#b00000" /><td bgcolor="#470000" /></tr><tr height=1><td bgcolor="#620000" /><td bgcolor="#cf0000" /><td bgcolor="#cf0606" /><td bgcolor="#ecaeae" /><td bgcolor="#eecdcd" /><td bgcolor="#ce1b1b" /><td bgcolor="#cc0000" /><td bgcolor="#ce1b1b" /><td bgcolor="#eecdcd" /><td bgcolor="#ecaeae" /><td bgcolor="#cf0606" /><td bgcolor="#ab0000" /><td bgcolor="#450000" /></tr><tr height=1><td bgcolor="#610000" /><td bgcolor="#ca0000" /><td bgcolor="#c70000" /><td bgcolor="#c41111" /><td bgcolor="#c50e0e" /><td colspan=3 bgcolor="#c80000" /><td bgcolor="#c50e0e" /><td bgcolor="#c41111" /><td bgcolor="#c80000" /><td bgcolor="#a50000" /><td bgcolor="#430000" /></tr><tr height=1><td bgcolor="#470000" /><td bgcolor="#c00000" /><td bgcolor="#c20000" /><td bgcolor="#c10000" /><td bgcolor="#be0000" /><td bgcolor="#bb0000" /><td bgcolor="#b90000" /><td bgcolor="#b70000" /><td bgcolor="#b40000" /><td bgcolor="#b30000" /><td bgcolor="#ac0000" /><td bgcolor="#8e0000" /><td bgcolor="#320000" /></tr><tr height=1><td bgcolor="#070000" /><td bgcolor="#4c0000" /><td bgcolor="#6c0000" /><td bgcolor="#680000" /><td bgcolor="#640000" /><td bgcolor="#610000" /><td bgcolor="#5e0000" /><td bgcolor="#5a0000" /><td bgcolor="#580000" /><td bgcolor="#540000" /><td bgcolor="#510000" /><td bgcolor="#380000" /><td bgcolor="#050000" /></tr></table></td></tr></table>
+			</a></td> </tr>
+			<tr><td>
+			<input style="font-size: 75%;" id="fileInput" type="file" onchange="processFiles(this.files)">
+			<input style="font-size: 75%;" type="button" value="Cargar" onclick="cguardado ();"/>
+			</td></tr>
+			</table>
+		</div>
+
+		<!--	PROPERTIES WINDOW	-->
+		
+		<div id="properties" style="z-index: -999; position: absolute; width: 560px; height: 250px; top: 200px; left: 200px;border-right: 2px solid black;border-bottom: 2px solid black; border-left: 2px solid black;background-color: #d1d1d1; padding-bottom: 10px;">
+			<table bgcolor="#444749" width="100%">
+			<tr id="properties_handle">
+			<td align="center" valign="middle" bgcolor="black" width="10%">
+			<font size="2px" color="white">Propiedades</font><a onclick="document.getElementById('properties').style.zIndex='-999';" href="#" >
+			<table style="position:absolute;top: 2.6px;left:540px;" align="right" cellpadding=0 cellspacing=0 height=13 width=13 style="font-size:0px;height:13;width:13;"><tr><td><table cellpadding=0 cellspacing=0 height=13 width=13 style="font-size:0px;height:13px;width:13px;"><tr height=0><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /></tr><tr height=1><td bgcolor="#040000" /><td bgcolor="#450000" /><td bgcolor="#710000" /><td bgcolor="#780000" /><td bgcolor="#7f0000" /><td bgcolor="#850000" /><td bgcolor="#8a0000" /><td bgcolor="#830000" /><td bgcolor="#7a0000" /><td bgcolor="#720000" /><td bgcolor="#6b0000" /><td bgcolor="#430000" /><td bgcolor="#050000" /></tr><tr height=1><td bgcolor="#440000" /><td bgcolor="#e40000" /><td bgcolor="#f30000" /><td bgcolor="#f00000" /><td bgcolor="#eb0000" /><td bgcolor="#e80000" /><td bgcolor="#e30000" /><td bgcolor="#dd0000" /><td bgcolor="#d70000" /><td bgcolor="#d10000" /><td bgcolor="#cb0000" /><td bgcolor="#be0000" /><td bgcolor="#3d0000" /></tr><tr height=1><td bgcolor="#730000" /><td bgcolor="#f50000" /><td bgcolor="#f90000" /><td bgcolor="#f80000" /><td bgcolor="#f60000" /><td bgcolor="#f40000" /><td bgcolor="#f20000" /><td bgcolor="#f10000" /><td bgcolor="#ef0000" /><td bgcolor="#ed0000" /><td bgcolor="#e60000" /><td bgcolor="#c10000" /><td bgcolor="#590000" /></tr><tr height=1><td bgcolor="#710000" /><td bgcolor="#f20000" /><td bgcolor="#f70101" /><td bgcolor="#fa3838" /><td bgcolor="#fa3737" /><td bgcolor="#f80000" /><td bgcolor="#f90101" /><td bgcolor="#f80000" /><td bgcolor="#fa3737" /><td bgcolor="#fb3838" /><td bgcolor="#fa0101" /><td bgcolor="#cd0000" /><td bgcolor="#530000" /></tr><tr height=1><td bgcolor="#6e0000" /><td bgcolor="#ec0000" /><td bgcolor="#f00303" /><td bgcolor="#f99b9b" /><td bgcolor="#fff9f9" /><td bgcolor="#f44949" /><td bgcolor="#ee0000" /><td bgcolor="#f44949" /><td bgcolor="#fff9f9" /><td bgcolor="#f99b9b" /><td bgcolor="#f10303" /><td bgcolor="#c70000" /><td bgcolor="#500000" /></tr><tr height=1><td bgcolor="#6c0000" /><td bgcolor="#e60000" /><td bgcolor="#e90000" /><td bgcolor="#eb1e1e" /><td bgcolor="#fad9d9" /><td bgcolor="#fef7f7" /><td bgcolor="#f47e7e" /><td bgcolor="#fef7f7" /><td bgcolor="#fad9d9" /><td bgcolor="#eb1e1e" /><td bgcolor="#ea0000" /><td bgcolor="#c10000" /><td bgcolor="#4f0000" /></tr><tr height=1><td bgcolor="#6a0000" /><td bgcolor="#e10000" /><td colspan=2 bgcolor="#e20000" /><td bgcolor="#e11717" /><td bgcolor="#f9dede" /><td bgcolor="#ffffff" /><td bgcolor="#f9dede" /><td bgcolor="#e11717" /><td bgcolor="#e20000" /><td bgcolor="#e30000" /><td bgcolor="#bc0000" /><td bgcolor="#4c0000" /></tr><tr height=1><td bgcolor="#670000" /><td bgcolor="#db0000" /><td bgcolor="#dc0000" /><td bgcolor="#da0000" /><td bgcolor="#e64848" /><td bgcolor="#fff8f8" /><td bgcolor="#feffff" /><td bgcolor="#fff8f8" /><td bgcolor="#e64848" /><td bgcolor="#db0000" /><td bgcolor="#dc0000" /><td bgcolor="#b60000" /><td bgcolor="#4a0000" /></tr><tr height=1><td bgcolor="#650000" /><td colspan=2 bgcolor="#d50000" /><td bgcolor="#e04343" /><td bgcolor="#fef9f9" /><td bgcolor="#f4d7d7" /><td bgcolor="#d84242" /><td bgcolor="#f4d7d7" /><td bgcolor="#fef9f9" /><td bgcolor="#e04343" /><td bgcolor="#d60000" /><td bgcolor="#b00000" /><td bgcolor="#470000" /></tr><tr height=1><td bgcolor="#620000" /><td bgcolor="#cf0000" /><td bgcolor="#cf0606" /><td bgcolor="#ecaeae" /><td bgcolor="#eecdcd" /><td bgcolor="#ce1b1b" /><td bgcolor="#cc0000" /><td bgcolor="#ce1b1b" /><td bgcolor="#eecdcd" /><td bgcolor="#ecaeae" /><td bgcolor="#cf0606" /><td bgcolor="#ab0000" /><td bgcolor="#450000" /></tr><tr height=1><td bgcolor="#610000" /><td bgcolor="#ca0000" /><td bgcolor="#c70000" /><td bgcolor="#c41111" /><td bgcolor="#c50e0e" /><td colspan=3 bgcolor="#c80000" /><td bgcolor="#c50e0e" /><td bgcolor="#c41111" /><td bgcolor="#c80000" /><td bgcolor="#a50000" /><td bgcolor="#430000" /></tr><tr height=1><td bgcolor="#470000" /><td bgcolor="#c00000" /><td bgcolor="#c20000" /><td bgcolor="#c10000" /><td bgcolor="#be0000" /><td bgcolor="#bb0000" /><td bgcolor="#b90000" /><td bgcolor="#b70000" /><td bgcolor="#b40000" /><td bgcolor="#b30000" /><td bgcolor="#ac0000" /><td bgcolor="#8e0000" /><td bgcolor="#320000" /></tr><tr height=1><td bgcolor="#070000" /><td bgcolor="#4c0000" /><td bgcolor="#6c0000" /><td bgcolor="#680000" /><td bgcolor="#640000" /><td bgcolor="#610000" /><td bgcolor="#5e0000" /><td bgcolor="#5a0000" /><td bgcolor="#580000" /><td bgcolor="#540000" /><td bgcolor="#510000" /><td bgcolor="#380000" /><td bgcolor="#050000" /></tr></table></td></tr></table>
+			</a></td> </tr>
+			<tr><td>
+			<div style="font-size: 75%;">
+			Nombre del Mapa: <input  id="project_name" value="HtmlMap"  />
+			Tipo de Mapa
+			<select id="dd_output" onchange="return gui_outputChanged(this)">
+			<option selected="selected" value="imagemap">Mapa estándar</option>
+			<option value="css">Mapa CSS</option>
+			<option value="wiki">Mapa Wiki</option>
+			</select>
+			</div>
+			</td></tr>
+			</table>
+		</div>
+
+		<!--	VIEW OPTIONS WINDOW	-->
+
+		<div id="view_options" style="z-index: -999; position: absolute; width: 560px; height: 250px; top: 200px; left: 200px;border-right: 2px solid black;border-bottom: 2px solid black; border-left: 2px solid black;background-color: #d1d1d1; padding-bottom: 10px;">
+			<table bgcolor="#000000" width="100%">
+			<tr id="view_options_handle">
+			<td align="center" valign="middle" bgcolor="#000000" width="10%">
+			<font size="2px" color="white">Opciones</font><a onclick="document.getElementById('view_options').style.zIndex='-999';" href="#" >
+			<table style="position:absolute;top: 2.6px;left:540px;" align="right" cellpadding=0 cellspacing=0 height=13 width=13 style="font-size:0px;height:13;width:13;"><tr><td><table cellpadding=0 cellspacing=0 height=13 width=13 style="font-size:0px;height:13px;width:13px;"><tr height=0><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /><td width=1 /></tr><tr height=1><td bgcolor="#040000" /><td bgcolor="#450000" /><td bgcolor="#710000" /><td bgcolor="#780000" /><td bgcolor="#7f0000" /><td bgcolor="#850000" /><td bgcolor="#8a0000" /><td bgcolor="#830000" /><td bgcolor="#7a0000" /><td bgcolor="#720000" /><td bgcolor="#6b0000" /><td bgcolor="#430000" /><td bgcolor="#050000" /></tr><tr height=1><td bgcolor="#440000" /><td bgcolor="#e40000" /><td bgcolor="#f30000" /><td bgcolor="#f00000" /><td bgcolor="#eb0000" /><td bgcolor="#e80000" /><td bgcolor="#e30000" /><td bgcolor="#dd0000" /><td bgcolor="#d70000" /><td bgcolor="#d10000" /><td bgcolor="#cb0000" /><td bgcolor="#be0000" /><td bgcolor="#3d0000" /></tr><tr height=1><td bgcolor="#730000" /><td bgcolor="#f50000" /><td bgcolor="#f90000" /><td bgcolor="#f80000" /><td bgcolor="#f60000" /><td bgcolor="#f40000" /><td bgcolor="#f20000" /><td bgcolor="#f10000" /><td bgcolor="#ef0000" /><td bgcolor="#ed0000" /><td bgcolor="#e60000" /><td bgcolor="#c10000" /><td bgcolor="#590000" /></tr><tr height=1><td bgcolor="#710000" /><td bgcolor="#f20000" /><td bgcolor="#f70101" /><td bgcolor="#fa3838" /><td bgcolor="#fa3737" /><td bgcolor="#f80000" /><td bgcolor="#f90101" /><td bgcolor="#f80000" /><td bgcolor="#fa3737" /><td bgcolor="#fb3838" /><td bgcolor="#fa0101" /><td bgcolor="#cd0000" /><td bgcolor="#530000" /></tr><tr height=1><td bgcolor="#6e0000" /><td bgcolor="#ec0000" /><td bgcolor="#f00303" /><td bgcolor="#f99b9b" /><td bgcolor="#fff9f9" /><td bgcolor="#f44949" /><td bgcolor="#ee0000" /><td bgcolor="#f44949" /><td bgcolor="#fff9f9" /><td bgcolor="#f99b9b" /><td bgcolor="#f10303" /><td bgcolor="#c70000" /><td bgcolor="#500000" /></tr><tr height=1><td bgcolor="#6c0000" /><td bgcolor="#e60000" /><td bgcolor="#e90000" /><td bgcolor="#eb1e1e" /><td bgcolor="#fad9d9" /><td bgcolor="#fef7f7" /><td bgcolor="#f47e7e" /><td bgcolor="#fef7f7" /><td bgcolor="#fad9d9" /><td bgcolor="#eb1e1e" /><td bgcolor="#ea0000" /><td bgcolor="#c10000" /><td bgcolor="#4f0000" /></tr><tr height=1><td bgcolor="#6a0000" /><td bgcolor="#e10000" /><td colspan=2 bgcolor="#e20000" /><td bgcolor="#e11717" /><td bgcolor="#f9dede" /><td bgcolor="#ffffff" /><td bgcolor="#f9dede" /><td bgcolor="#e11717" /><td bgcolor="#e20000" /><td bgcolor="#e30000" /><td bgcolor="#bc0000" /><td bgcolor="#4c0000" /></tr><tr height=1><td bgcolor="#670000" /><td bgcolor="#db0000" /><td bgcolor="#dc0000" /><td bgcolor="#da0000" /><td bgcolor="#e64848" /><td bgcolor="#fff8f8" /><td bgcolor="#feffff" /><td bgcolor="#fff8f8" /><td bgcolor="#e64848" /><td bgcolor="#db0000" /><td bgcolor="#dc0000" /><td bgcolor="#b60000" /><td bgcolor="#4a0000" /></tr><tr height=1><td bgcolor="#650000" /><td colspan=2 bgcolor="#d50000" /><td bgcolor="#e04343" /><td bgcolor="#fef9f9" /><td bgcolor="#f4d7d7" /><td bgcolor="#d84242" /><td bgcolor="#f4d7d7" /><td bgcolor="#fef9f9" /><td bgcolor="#e04343" /><td bgcolor="#d60000" /><td bgcolor="#b00000" /><td bgcolor="#470000" /></tr><tr height=1><td bgcolor="#620000" /><td bgcolor="#cf0000" /><td bgcolor="#cf0606" /><td bgcolor="#ecaeae" /><td bgcolor="#eecdcd" /><td bgcolor="#ce1b1b" /><td bgcolor="#cc0000" /><td bgcolor="#ce1b1b" /><td bgcolor="#eecdcd" /><td bgcolor="#ecaeae" /><td bgcolor="#cf0606" /><td bgcolor="#ab0000" /><td bgcolor="#450000" /></tr><tr height=1><td bgcolor="#610000" /><td bgcolor="#ca0000" /><td bgcolor="#c70000" /><td bgcolor="#c41111" /><td bgcolor="#c50e0e" /><td colspan=3 bgcolor="#c80000" /><td bgcolor="#c50e0e" /><td bgcolor="#c41111" /><td bgcolor="#c80000" /><td bgcolor="#a50000" /><td bgcolor="#430000" /></tr><tr height=1><td bgcolor="#470000" /><td bgcolor="#c00000" /><td bgcolor="#c20000" /><td bgcolor="#c10000" /><td bgcolor="#be0000" /><td bgcolor="#bb0000" /><td bgcolor="#b90000" /><td bgcolor="#b70000" /><td bgcolor="#b40000" /><td bgcolor="#b30000" /><td bgcolor="#ac0000" /><td bgcolor="#8e0000" /><td bgcolor="#320000" /></tr><tr height=1><td bgcolor="#070000" /><td bgcolor="#4c0000" /><td bgcolor="#6c0000" /><td bgcolor="#680000" /><td bgcolor="#640000" /><td bgcolor="#610000" /><td bgcolor="#5e0000" /><td bgcolor="#5a0000" /><td bgcolor="#580000" /><td bgcolor="#540000" /><td bgcolor="#510000" /><td bgcolor="#380000" /><td bgcolor="#050000" /></tr></table></td></tr></table>
+			</a></td> </tr>
+			<tr><td><div style="font-size: 75%;">
+				Indicadores<label for="bb"></label>&nbsp;
+					<select onchange="changelabeling(this)">
+					<option value="">-</option>
+					<option value="%n" selected="selected">Números</option>
+					<option value="%a">Texto</option>
+					<option value="%h">Links</option>
+					<option value="%c">Coordenadas</option>
+					</select>
+
+				</div></td></tr>
+			</table>
+		</div>
+
+
+		
+			
+			
+
+<div  id="maindivcontainer"><div id="maindiv"><form id="img_area_form"><fieldset></div></fieldset></div><fieldset style="position: relative; border-bottom: 1px solid black;" id="area2">
+		
+		
+		<div id="form_container" style="clear: both;">
+		<!-- form elements comehere -->
+     	</div></fieldset>
+	
+	<div id="pic_container" onmouseout="document.getElementById('coordenadas').innerHTML = '' " onmousemove="coordenadas(event)">
+
+	</div>
+		
+	
+	<fieldset id="fieldset_html" style="z-index:-10; position: absolute; top: 30px; left:6px;">
+		<br>
+		
+					
+		<textarea  name="htmlcontainer" id="html_container"></textarea>
+	<input value="Seleccionar Todo" onclick="javascript:this.form.htmlcontainer.focus();this.form.htmlcontainer.select();" type="button" />	
+
+
+	</fieldset>
+
+</form>
+
+<script type="text/javascript" src="./files/imgmap_packed.js"></script>
+<script type="text/javascript" src="./files/default_interface.js"></script>     
+       
+
+<div style="position: absolute; z-index: -999999999999999999999999999999999;">
+
+<textarea id="fileOutput"></textarea>
+<form id="form1" name="form1">
+<textarea name="textarea" id="inputTextToSave"></textarea></form>
+
+		<textarea id="contador" style="width: 50px;height: 50px;">12</textarea>
+			<textarea id="mem0" style="width: 50px;height: 50px;"></textarea>
+			<textarea id="mem1" style="width: 50px;height: 50px;"></textarea>
+			<textarea id="mem2" style="width: 50px;height: 50px;"></textarea>
+			<textarea id="mem3" style="width: 50px;height: 50px;"></textarea>
+			<textarea id="mem4" style="width: 50px;height: 50px;"></textarea>
+			<textarea id="mem5" style="width: 50px;height: 50px;"></textarea>
+			<textarea id="mem6" style="width: 50px;height: 50px;"></textarea>
+			<textarea id="mem7" style="width: 50px;height: 50px;"></textarea>
+			<textarea id="mem8" style="width: 50px;height: 50px;"></textarea>
+			<textarea id="mem9" style="width: 50px;height: 50px;"></textarea>
+			<textarea id="mem10" style="width: 50px;height: 50px;"></textarea>
+			<textarea id="mem11" style="width: 50px;height: 50px;"></textarea>
+
+</div>
+
+<!-- SCRIPTS --> 
+
+<script>
+// UNDO-REDO SYSTEM (FRONTEND)
+
+function undo() {
+var i = document.getElementById("contador").value;
+i++;
+document.getElementById("contador").value = i;
+document.getElementById('html_container').value = document.getElementById("mem"+i).value;
+gui_htmlBlur();
+myimgmap.addNewArea();	
+}
+
+function redo() {
+var i = document.getElementById("contador").value;
+i--;
+document.getElementById("contador").value = i;
+document.getElementById('html_container').value = document.getElementById("mem"+i).value;
+gui_htmlBlur();
+myimgmap.addNewArea();	
+}
+</script>
+
+<script>
+// OPEN AND RENDER LOCAL IMAGE
+
+  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
+
+      // Only process image files.
+      if (!f.type.match('image.*')) {
+        continue;
+      }
+
+      var reader = new FileReader();
+
+      // Closure to capture the file information.
+      reader.onload = (function(theFile) {
+        return function(e) {
+          // Render thumbnail.
+          var span = document.createElement('span');
+          span.innerHTML = ['<img id="seleccion" class="thumb" src="', e.target.result,
+                            '" title="', escape(theFile.name), '"/>'].join('');
+          document.getElementById('list').insertBefore(span, null);
+        };
+      })(f);
+
+      // Read in the image file as a data URL.
+      reader.readAsDataURL(f);
+    }
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+</script>
+
+<script type="text/javascript" >
+function saveTextAsFile()
+{      
+// grab the content of the form field and place it into a variable
+	 var txtFileName2 = document.getElementById("project_name").value;
+	 var code = document.getElementById("html_container").value;
+    var textToWrite = code+"\n"+txtFileName2;
+//  create a new Blob (html5 magic) that conatins the data from your form feild
+    var textFileAsBlob = new Blob([textToWrite], {type:'text/plain'});
+// Specify the name of the file to be saved
+	var txtFileName = document.getElementById("project_name").value;
+	var extension = ".swll";
+   var fileNameToSaveAs = txtFileName+extension;
+    
+// Optionally allow the user to choose a file name by providing 
+// an imput field in the HTML and using the collected data here
+// var fileNameToSaveAs = txtFileName.text;
+
+// create a link for our script to 'click'
+    var downloadLink = document.createElement("a");
+//  supply the name of the file (from the var above).
+// you could create the name here but using a var
+// allows more flexability later.
+    downloadLink.download = fileNameToSaveAs;
+// provide text for the link. This will be hidden so you
+// can actually use anything you want.
+    downloadLink.innerHTML = "My Hidden Link";
+    
+// allow our code to work in webkit & Gecko based browsers
+// without the need for a if / else block.
+    window.URL = window.URL || window.webkitURL;
+          
+// Create the link Object.
+    downloadLink.href = window.URL.createObjectURL(textFileAsBlob);
+// when link is clicked call a function to remove it from
+// the DOM in case user wants to save a second file.
+    downloadLink.onclick = destroyClickedElement;
+// make sure the link is hidden.
+    downloadLink.style.display = "none";
+// add the link to the DOM
+    document.body.appendChild(downloadLink);
+    
+// click the new link
+    downloadLink.click();
+}
+
+function destroyClickedElement(event)
+{
+// remove the link from the DOM
+    document.body.removeChild(event.target);
+}
+
+// EOF
+</script>
+
+</body>
+</html>

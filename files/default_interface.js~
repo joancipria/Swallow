@@ -18,8 +18,7 @@
  *	TaskBar shapes buttons
  */
  function changeToSquare() {
- 	var CurrentID = "img_area_"+myimgmap.currentid;
-	document.getElementById(CurrentID).getElementsByTagName('select')[0].selectedIndex = 0;
+ 	document.getElementsByClassName("img_shape")[0].selectedIndex = 0;
  }
  
 function changeToPoly() {

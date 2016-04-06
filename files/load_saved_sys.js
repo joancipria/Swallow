@@ -13,15 +13,7 @@
     along with Swallow.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-function guardar (){
-//Catch values
-var codigo = document.getElementById('html_container').value;
-var nombre = document.getElementById('project_name').value;             
- 	 
-//Export to textarea               
-document.getElementById ("textarea").value = codigo+"\n"+nombre;
-}
-            
+        
 function cguardado (){
 	
 //Catch saved values and split by \n
@@ -41,8 +33,7 @@ var file = files[0];
 var reader = new FileReader();
 
 reader.onload = function (e) {
-// Cuando éste evento se dispara, los datos están ya disponibles.
-// Se trata de copiarlos a una área <div> en la página.
+
 var output = document.getElementById("fileOutput");
 output.textContent = e.target.result;
 };
