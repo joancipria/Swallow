@@ -16,7 +16,7 @@ over a image. Then, you can use it in the web.
 With Swallow you can easily draw ALL the standard image map shapes (rectangle, circle, polygon), 
 and you can have full control over the generated HTML code as well.
 
-<b>Main features:</b>
+Main features:
 
    -Built in Html, Javascript and CSS
    -Very fast and light
@@ -28,7 +28,7 @@ and you can have full control over the generated HTML code as well.
    -Create/edit links, tags, etc. directly from the graphic interface
    -Code in real time
    
-   ![screenshot of the online editor](http://swallow-editor.org/en/img/cap2.png)
+  ![Screenshot of Swallow](http://swallow-editor.org/en/img/cap2.png)
 
 Licensed udner GPL.
 
