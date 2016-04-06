@@ -1,4 +1,4 @@
-
+# Swallow
 Try the online editor at: http://swallow-editor.org/
  
 #### --- EN ---
@@ -23,9 +23,7 @@ and you can have full control over the generated HTML code as well.
    
   ![Screenshot of Swallow](http://swallow-editor.org/en/img/cap2.png)
 
-Licensed udner GPL.
-
-http://swallow-editor.org/
+Licensed udner GPL - http://swallow-editor.org/
 
 ####--- ES ---
 Swallow es un editor de mapas HTML libre construido en tecnologÃ­as web Javascript, CSS y HTML 
@@ -44,7 +42,6 @@ sobre una imagen un mapa HTML para su posterior uso en la web.
    * Crea/edita links, etiquetas, etc directamente desde la interfaz
    * Código visible en tiempo real
 
+![Screenshot of Swallow](http://swallow-editor.org/en/img/cap2.png)
 
-Licenciado bajo GPL.
-
-http://swallow-editor.org/
+Licenciado bajo GPL - http://swallow-editor.org/
