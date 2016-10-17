@@ -22,6 +22,6 @@ and you can have full control over the generated HTML code as well.
    * Code in real time
  
    
-  ![Screenshot of Swallow](http://swallow-editor.org/en/img/cap2.png)
+  ![Screenshot of Swallow](https://joancipria.files.wordpress.com/2016/10/2016-10-17-174549_1366x768_scrot.png)
 
 Licensed udner GPL - http://swallow-editor.org/
