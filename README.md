@@ -11,7 +11,7 @@ and you can have full control over the generated HTML code as well.
 
 **Main features:**
 
-   * Built in Html, Javascript and CSS
+   * Built in Html, Javascript and CSS using NW.js
    * Very fast and light
    * Comfortable and intuitive interface
    * Load seamlessly high resolution images
@@ -24,4 +24,4 @@ and you can have full control over the generated HTML code as well.
    
   ![Screenshot of Swallow](https://joancipria.files.wordpress.com/2016/10/2016-10-17-174549_1366x768_scrot.png)
 
-Licensed udner GPL - http://swallow-editor.org/
+Licensed udner GPL
