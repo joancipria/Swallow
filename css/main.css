@@ -14,56 +14,29 @@
 */
 
 #taskbar {
-background-color: #d1d1d1; 
-border-bottom: 2px solid black; 
-position: relative; 
-z-index: 61; 
-padding-bottom: 6px; 
+background-color: #d1d1d1;
+border-bottom: 2px solid black;
+padding-bottom: 6px;
 padding-top: 6px;
-}
-
-#btn-1 {
-position: aboslute; 
-left: 5px; 
-top: 1px;
-}
-
-#btn-3 {
-position: aboslute; 
-left: 15px; 
-top: 1px;
-}
-
-#btn-2 {
-position: aboslute; 
-left: 10px; 
-top: 1px;" 
+display: block;
 }
 
 #coordenadas {
-width: auto; 
-position: absolute; 
-left: 290px; 
-top:13px;" 
+width: auto;
+position: absolute;
+left: 90%;
+top: 2%;
 }
-
-#button_container {
-position: absolute; 
-left: 400px; 
-top:8px; 
-z-index: 60;
-}
-
 .thumb {
     height: 75px;
     border: 1px solid #000;
     margin: 10px 5px 0 0;
   }
-  
+
 #cuadroblanco {
 position:absolute;
-left: 0px; 
-top: 0px; 
+left: 0px;
+top: 0px;
 z-index: 50;
 background-color:white;
 text-align:left;
@@ -213,15 +186,15 @@ A.source_accept:hover {
 	height: 520px;
 	border: solid 0px #efefef;
 	overflow: auto;
-	
-	
+
+
 }
 
 #pic_container .imgmap_label {
 	font: bold 10px Arial;
 	color: #100;
 	padding: 1px 2px;
-	
+
 }
 
 #status_container {
@@ -238,6 +211,7 @@ A.source_accept:hover {
 
 #fieldset_html {
 	text-align: left;
+	display: none;
 }
 
 #html_container {
@@ -254,4 +228,6 @@ font-size: 10px;
 display: inline;
 padding-left: 5px;
 }
-
+#hidden-elements{
+display: none;
+}

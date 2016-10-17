@@ -1,53 +1,23 @@
-/**
- *	Image Map Editor (imgmap) - in-browser imagemap editor
- *	Copyright (C) 2006 - 2008 Adam Maschek (adam.maschek @ gmail.com)
- *	
- *	This program is free software; you can redistribute it and/or
- *	modify it under the terms of the GNU General Public License
- *	as published by the Free Software Foundation; either version 2
- *	of the License, or (at your option) any later version.
- *	
- *	This program is distributed in the hope that it will be useful,
- *	but WITHOUT ANY WARRANTY; without even the implied warranty of
- *	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- *	GNU General Public License for more details.
- *	
- *	You should have received a copy of the GNU General Public License
- *	along with this program; if not, write to the Free Software
- *	Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
- */
-/**
- *	@fileoverview
- *	Online Image Map Editor - main script file.
- *	This is the main script file of the Online Image Map Editor.
- * 
- *	TODO:
- *	-scriptload race condition fix
- *	-destroy/cleanup function ?
- *	-testing highlighter
- *	-cursor area_mousemove in opera not refreshing quite well - bug reported
- *	-get rid of memo array
- *	-highlight which control point is edited in html or form mode   
- *	-more comments, especially on config vars
- *	-make function names more logical
- *	- dumpconfig   
- *	-prepare for bad input /poly not properly closed?
- *	-prepare for % values in coords  
- *	-prepare for default shape http://www.w3.org/TR/html4/struct/objects.html#edef-AREA
- *	 
- *	@date	26-02-2007 2:24:50
- *	@author	Adam Maschek (adam.maschek(at)gmail.com)
- *	@copyright
- *	@version 2.2
- *	 
- */
-/*jslint browser: true, newcap: false, white: false, onevar: false, plusplus: false, eqeqeq: false, nomen: false */
-/*global imgmapStrings:true, window:false, G_vmlCanvasManager:false, air:false, imgmap_spawnObjects:true */
-/**
- *	@author	Adam Maschek
- *	@constructor
- *	@param config	The config object. 
- */
+/*  This file is part of Swallow.
+
+    Swallow is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Swallow is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    You should have received a copy of the GNU General Public License
+    along with Swallow.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+ 
+function readImage() {
+document.getElementById('pic_container').getElementsByTagName('img')[0].src = (document.getElementById('seleccion').src);
+	} 
+ 
 function imgmap(config) {
 
 	/** Version string of imgmap */
@@ -100,8 +70,7 @@ function imgmap(config) {
 	this.mapid      = '';
 	
 	/** watermark to attach to output */
-	this.waterMark  = '<!-- Created by Swallow (http://swallow-editor.org) -->';
-	
+	this.waterMark  = '<!-- Created by Swallow (https://joancipria.com/proyectos/swallow/) -->';	
 	/** global scale of areas (1-normal, 2-doubled, 0.5-half, etc.) */
 	this.globalscale = 1;
 
