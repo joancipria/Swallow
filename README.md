@@ -1,9 +1,9 @@
 # Swallow
-Try the online editor at: http://swallow-editor.org/
+Try the online editor at: http://swallow-editor.org/en/app
  
-#### --- EN ---
+#### --- About---
 Swallow is an utility to create and modify HTML image maps. It is builtin web languages such as 
-Javascript, CSS and HTML. And it is focused to offer a web developing tool to draw easily a map 
+Javascript, CSS, HTML and NW.js. And it is focused to offer a web developing tool to draw easily a map 
 over a image. Then, you can use it in the web.
 
 With Swallow you can easily draw ALL the standard image map shapes (rectangle, circle, polygon), 
